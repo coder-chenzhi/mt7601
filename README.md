@@ -97,15 +97,18 @@ used as Wireless Network Card
 
 cd src 
 
-find **#ifdef MT7601U** in common/rtusb_dev_id.c
-add below codes
+find **#ifdef MT7601U** in common/rtusb_dev_id.c and add below codes
+
 {USB_DEVICE(0x148f,0x760b)}, /* 360 Wifi Gen 2*/ 
+
 {USB_DEVICE(0x2955,0x1001)}, /* Xiao Du Wifi*/ 
+
 {USB_DEVICE(0x2717,0x4106)}, /* XiaoMi wifi */ 
 
+
 after that, run below 
-'''sh
+```sh
 $sudo make  
 $sudo make install 
 $sudo modprobe mt7601Usta 
-'''sh
+```
