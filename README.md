@@ -92,18 +92,20 @@ Starting around Feb 2015, [a new mac80211 driver was written from scratch by the
 **Patch:** @poma at [linux-wireless](http://wireless.kernel.org/en/developers/MailingLists) mailing list
 
 
-### Add by coder-chenzhi
-安装小米Wifi，只有无线网卡功能
+### Add support for Xiaomi Wifi
+used as Wireless Network Card
 
-进入到src 
+cd src 
 
-在common/rtusb_dev_id.c中找到#ifdef MT7601U 
-在其下面添加 
+find **#ifdef MT7601U** in common/rtusb_dev_id.c
+add below codes
 {USB_DEVICE(0x148f,0x760b)}, /* 360 Wifi Gen 2*/ 
 {USB_DEVICE(0x2955,0x1001)}, /* Xiao Du Wifi*/ 
 {USB_DEVICE(0x2717,0x4106)}, /* XiaoMi wifi */ 
 
-然后 
-sudo make  
-sudo make install 
-sudo modprobe mt7601Usta 
+after that, run below 
+'''sh
+$sudo make  
+$sudo make install 
+$sudo modprobe mt7601Usta 
+'''sh
